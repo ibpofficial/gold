@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | Luxuria Jewelry</title>
+    <link rel="website icon" type="png" href="IBP ;.png">
+    <style>
+        /* Terms & Conditions Page Styles with Animations */
+        :root {
+            --primary-color: #d4af37; /* Gold */
+            --secondary-color: #333333; /* Dark gray */
+            --accent-color: #a67c52; /* Metallic bronze */
+            --light-color: #f8f8f8;
+            --dark-color: #222222;
+            --text-color: #555555;
+            --light-gray: #eaeaea;
+            --white: #ffffff;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-slow: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: var(--light-color);
+            padding: 0;
+            margin: 0;
+        }
+
+        .terms-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 3px;
+        }
+
+        .terms-title {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .terms-title::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            border-radius: 5px;
+            transform: rotate(-1deg);
+            z-index: -1;
+            animation: pulseBorder 4s infinite alternate;
+        }
+
+        @keyframes pulseBorder {
+            0% {
+                transform: rotate(-1deg) scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: rotate(1deg) scale(1.02);
+                opacity: 0.7;
+            }
+        }
+
+        .terms-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .terms-content {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-slow);
+        }
+
+        .terms-content:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .terms-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+        .section:nth-child(6) { animation-delay: 1.2s; }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .section-title:hover::after {
+            width: 100%;
+        }
+
+        .section-content {
+            padding-left: 20px;
+            border-left: 1px dashed var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .section:hover .section-content {
+            border-left-color: var(--primary-color);
+            padding-left: 25px;
+        }
+
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.05);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+            transition: var(--transition);
+        }
+
+        .highlight-box:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            transform: translateX(5px);
+        }
+
+        .last-updated {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-color);
+            margin-top: 50px;
+            opacity: 0;
+            animation: fadeIn 0.6s 1.4s forwards;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .terms-title {
+                font-size: 2.2rem;
+            }
+            
+            .terms-content {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .terms-title {
+                font-size: 1.8rem;
+            }
+            
+            .terms-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terms-container">
+        <div class="terms-header">
+            <h1 class="terms-title">Terms & Conditions</h1>
+            <p class="terms-subtitle">Last Updated: January 1, 2023</p>
+        </div>
+        
+        <div class="terms-content">
+            <div class="section">
+                <h2 class="section-title">1. Introduction</h2>
+                <div class="section-content">
+                    <p>Welcome to Luxuria Jewelry. These Terms & Conditions govern your use of our website and services. By accessing or using our services, you agree to be bound by these terms.</p>
+                    <div class="highlight-box">
+                        <p>Please read these terms carefully before using our website. If you disagree with any part of these terms, you may not access the service.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">2. Intellectual Property</h2>
+                <div class="section-content">
+                    <p>The content, organization, graphics, design, and other matters related to our site are protected under applicable copyrights and other proprietary laws.</p>
+                    <p>All jewelry designs, product images, and descriptions are the exclusive property of Luxuria Jewelry and may not be reproduced without express written permission.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">3. Product Information</h2>
+                <div class="section-content">
+                    <p>We strive to accurately display our products, including colors and details. However, actual colors may vary due to device display settings.</p>
+                    <p>All precious metal weights and gemstone carat weights are approximate. Slight variations may occur in handmade items.</p>
+                    <div class="highlight-box">
+                        <p>All jewelry is handcrafted, and minor variations in design may occur, making each piece unique.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">4. Orders & Payments</h2>
+                <div class="section-content">
+                    <p>All orders are subject to product availability. We reserve the right to refuse or cancel any order for any reason.</p>
+                    <p>Accepted payment methods include major credit cards, PayPal, and Apple Pay. All transactions are processed securely.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">5. Returns & Exchanges</h2>
+                <div class="section-content">
+                    <p>We accept returns within 30 days of purchase for store credit or exchange. Items must be in original condition with all tags attached.</p>
+                    <div class="highlight-box">
+                        <p>Custom or engraved items cannot be returned or exchanged unless defective.</p>
+                    </div>
+                    <p>Shipping costs for returns are the responsibility of the customer, except in cases of defective items.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">6. Limitation of Liability</h2>
+                <div class="section-content">
+                    <p>Luxuria Jewelry shall not be liable for any special or consequential damages resulting from the use of, or inability to use, our products or services.</p>
+                    <p>Our total liability for any claim related to our products or services shall not exceed the purchase price of the item in question.</p>
+                </div>
+            </div>
+            
+            <p class="last-updated">These terms may be updated periodically. Please check back for the most current version.</p>
+        </div>
+    </div>
+</body>
+</html>

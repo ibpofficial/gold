@@ -1,0 +1,13 @@
+ {
+            id: 11,
+            title: "Layered Necklace Set",
+            category: "necklaces",
+            price: 6990,
+            originalPrice: 8990,
+            material: ["gold"],
+            rating: 4.6,
+            reviews: 57,
+            image: "images/products/layered-necklace.jpg",
+            description: "A set of three delicate gold necklaces designed to be worn together or separately.",
+            inStock: true
+        },

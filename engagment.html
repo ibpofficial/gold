@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Jewelry | Luxuria</title>
+    <link rel="website icon" type="png" href="IBP ;.png">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">LUXURIA</a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#shop">products</a></li>
+                        <li><a href="shop.html" class="active">Shop</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+                    <a href="#" class="account-btn"><i class="far fa-user"></i></a>
+                    <a href="#" class="cart-btn" id="cart-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <button class="close-mobile-menu" id="close-mobile-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Shop Our Collection</h1>
+            <nav class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Shop</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-content">
+                <!-- Filters -->
+                <aside class="filters">
+                    <div class="filter-group">
+                        <h3 class="filter-title">Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="shop.html" class="active" data-category="all">All Jewelry</a></li>
+                            <li><a href="shop.html?category=rings" data-category="rings">Rings</a></li>
+                            <li><a href="shop.html?category=necklaces" data-category="necklaces">Necklaces</a></li>
+                            <li><a href="shop.html?category=earrings" data-category="earrings">Earrings</a></li>
+                            <li><a href="shop.html?category=bracelets" data-category="bracelets">Bracelets</a></li>
+                        </ul>
+                    </div>
+                    <div class="filter-group">
+                        <h3 class="filter-title">Price Range</h3>
+                        <div class="price-range">
+                            <div class="range-slider">
+                                <input type="range" min="0" max="5000" value="0" class="min-price" id="min-price">
+                                <input type="range" min="0" max="5000" value="5000" class="max-price" id="max-price">
+                            </div>
+                            <div class="price-inputs">
+                                <div class="field">
+                                    <span>$</span>
+                                    <input type="number" id="input-min" class="input-min" value="0" min="0" max="5000">
+                                </div>
+                                <div class="separator">-</div>
+                                <div class="field">
+                                    <span>$</span>
+                                    <input type="number" id="input-max" class="input-max" value="5000" min="0" max="5000">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h3 class="filter-title">Materials</h3>
+                        <div class="material-filters">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="material" value="gold" checked>
+                                <span class="checkmark"></span>
+                                Gold
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="material" value="silver" checked>
+                                <span class="checkmark"></span>
+                                Silver
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="material" value="platinum" checked>
+                                <span class="checkmark"></span>
+                                Platinum
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="material" value="diamond" checked>
+                                <span class="checkmark"></span>
+                                Diamond
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" id="apply-filters">Apply Filters</button>
+                    <button class="btn btn-text" id="reset-filters">Reset All</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-grid">
+                    <div class="products-header">
+                        <p class="products-count">Showing <span id="shown-products">12</span> of <span id="total-products">12</span> products</p>
+                        <div class="sort-options">
+                            <label for="sort-by">Sort by:</label>
+                            <select id="sort-by">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="products-container" id="products-container">
+                        <!-- Products will be loaded here via JavaScript -->
+                    </div>
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+   
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4 class="footer-title">LUXURIA</h4>
+                    <p>Timeless jewelry crafted with passion and precision. Each piece tells a story of elegance and enduring beauty.</p>
+                </div>
+                <div class="footer-col">
+                    
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Customer Service</h4>
+                    <ul>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="sizeguide.html">Size Guide</a></li>
+                      
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">About</h4>
+                    <ul>
+                        <li><a href="ourstory.html">Our Story</a></li>
+                  
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Luxuria Jewelry. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                   
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded here -->
+            <div class="empty-cart">
+                <p>Your cart is empty</p>
+                <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="total-price">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Product Quick View Modal -->
+    <div class="product-modal" id="product-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-product-content" id="modal-product-content">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
